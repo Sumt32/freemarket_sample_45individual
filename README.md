@@ -55,7 +55,7 @@
 ### Association
 - has_many :items, dependent: :destroy
 - has_many :transactions, dependent: :destroy
-- belongs_to :profile
+- has_one :profile
 
 ## categoriesテーブル
 
