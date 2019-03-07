@@ -21,6 +21,7 @@
 - belongs_to :user
 - has_many :categories
 - has_many :brands
+- has_many :transactions, dependent: :destroy
 
 
 ## usersテーブル
@@ -52,9 +53,8 @@
 
 
 ### Association
-- has_many :items
-- has_many :buyers, through::transaction
-- has_many :transactions
+- has_many :items, dependent: :destroy
+- has_many :transactions, dependent: :destroy
 - belongs_to :profile
 
 ## categoriesテーブル
@@ -73,8 +73,8 @@
 |name|string|null: false|
 
 ### Association
-- has_many :items
-- has_many :categories
+- has_many :items, dependent: :destroy
+- has_many :categories, dependent: :destroy
 
 ## transactionsテーブル
 
