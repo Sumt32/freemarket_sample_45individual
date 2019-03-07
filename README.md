@@ -45,7 +45,6 @@
 |address|string|null: false|
 |building|string||
 |building_tel|integer||
-|introduction|text||
 |avatar|string||
 |birth_year|integer||
 |birth_month|integer||
@@ -56,7 +55,7 @@
 - has_many :items
 - has_many :buyers, through::transaction
 - has_many :transactions
-- belongs_to :buyer
+- belongs_to :profile
 
 ## categoriesテーブル
 
@@ -91,3 +90,14 @@
 - belongs_to :item
 - belongs_to :user
 - belongs_to :buyer
+
+## profilesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|introduction|text||
+|user_id|references|null: false, foreign_key:true|
+
+
+### Association
+- belongs_to :user
